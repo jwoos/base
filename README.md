@@ -1,2 +1,2 @@
-# base
-BASE (Basically All Stuff to Establish)
+# BASE
+Files to start off projects quickly
