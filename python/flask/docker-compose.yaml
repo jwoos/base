@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/api/Dockerfile
+    volumes:
+      - .:/opt/
+    ports:
+      - '9000:9000'
+    depends_on:
+      - nginx
+
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    volumes:
+      - ./static:/opt/static
+    ports:
+      - '8080:80'
