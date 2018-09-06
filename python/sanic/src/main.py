@@ -1,3 +1,5 @@
+import os
+
 from sanic import Sanic, response
 
 
@@ -10,4 +12,8 @@ async def test(request):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    app.run(
+        host='0.0.0.0',
+        port=9000,
+        workers=len(os.sched_getaffinity(0)),
+    )

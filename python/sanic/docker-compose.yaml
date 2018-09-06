@@ -9,8 +9,6 @@ services:
       - .:/opt/
     ports:
       - '9000:9000'
-    depends_on:
-      - nginx
 
   nginx:
     build:
@@ -20,3 +18,5 @@ services:
       - ./static:/opt/static
     ports:
       - '8080:80'
+    depends_on:
+      - api

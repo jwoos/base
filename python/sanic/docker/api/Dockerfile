@@ -15,4 +15,4 @@ COPY . /opt
 WORKDIR /opt
 
 ENTRYPOINT []
-CMD uwsgi uwsgi.ini
+CMD python3 src/main.py
